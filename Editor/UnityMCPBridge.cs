@@ -47,7 +47,7 @@ namespace UnityMCP.Editor
         {
             if (isRunning) return;
             isRunning = true;
-            listener = new TcpListener(IPAddress.Loopback, unityPort);
+            listener = new TcpListener(IPAddress.Any, unityPort);
             listener.Start();
             Debug.Log($"UnityMCPBridge started on port {unityPort}.");
             Task.Run(ListenerLoop);
